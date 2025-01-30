@@ -20,11 +20,13 @@ Underwater_Image_Segmentation/
 │   ├── coco_to_yolo.py   # Converts COCO annotations to YOLO format
 │   ├── inference.py      # Runs inference on test images
 │   ├── compare_results.py # Compares SAM & YOLOv8-seg results
+│── HPC/                 # Python scripts for training & testing
 │   ├── job.sh            # train the model on HPC
-│── results/             # visualization images
+│   ├── cluster_tutorial.pdf
+│── Results/             # visualization images
 │── README.md            # Project documentation
 
-
+```
 ---
 
 ## **HPC Training with SLURM **
