@@ -8,9 +8,10 @@
 
 ## 📌 **Project Overview**  
 This project implements and evaluates an underwater image segmentation model based on the paper:  
-[📄 Diving into Underwater: Segment Anything Model Guided Underwater Salient Instance Segmentation and A Large-scale Dataset](https://arxiv.org/abs/2406.06039).  
+[📄 Diving into Underwater: Segment Anything Model Guided Underwater Salient Instance Segmentation and A Large-scale Dataset](https://arxiv.org/abs/2406.06039).
 
 We retrained the SAM-based model (USIS-SAM) on the **large-scale Underwater Salient Instance Segmentation dataset (USIS10K)**, which comprises **10,632 underwater images** with pixel-level annotations across **seven categories** from diverse underwater scenes. Additionally, we fine-tuned the **YOLOv8-seg model** for comparison, aiming to enhance segmentation performance in underwater environments.
+
 ---
 
 ## **Repository Structure**  
