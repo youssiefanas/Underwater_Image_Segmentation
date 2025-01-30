@@ -88,7 +88,8 @@ Here is a comparison of segmentation results between **USIS-SAM** and **YOLOv8-S
 
 
 ##  **References**  
-- **Original Research Paper:** [📄 Diving into Underwater](https://arxiv.org/abs/2406.06039)  
+- **Original Research Paper:** [📄 Diving into Underwater](https://arxiv.org/abs/2406.06039)
+- **Original Repository:** [USIS10K](https://github.com/LiamLian0727/USIS10K/tree/main)
 - **SAM Model:** [Meta's Segment Anything Model](https://github.com/facebookresearch/segment-anything)  
 - **YOLOv8-Seg:** [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)  
 
