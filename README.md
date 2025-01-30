@@ -1,12 +1,12 @@
 # Underwater_Image_Segmentation
 
 
-### **Underwater Image Segmentation with USIS-SAM & YOLOv8**  
+### Underwater Image Segmentation with USIS-SAM & YOLOv8
 **Comparing USIS-SAM-based segmentation with YOLOv8-seg on underwater datasets**  
 
 ---
 
-## 📌 **Project Overview**  
+## Project Overview* 
 This project implements and evaluates an underwater image segmentation model based on the paper:  
 [📄 Diving into Underwater: Segment Anything Model Guided Underwater Salient Instance Segmentation and A Large-scale Dataset](https://arxiv.org/abs/2406.06039).
 
@@ -14,7 +14,7 @@ We retrained the SAM-based model (USIS-SAM) on the **large-scale Underwater Sali
 
 ---
 
-## **Repository Structure**  
+## Repository Structure
 ```
 Underwater_Image_Segmentation/
 │── src/                 # Python scripts for training & testing
@@ -30,47 +30,62 @@ Underwater_Image_Segmentation/
 ```
 ---
 
-## **HPC Training with SLURM **
+## HPC Training with SLURM
 To efficiently train the model, we used a High-Performance Computing (HPC) cluster with SLURM for job scheduling.
 ``` bash
 sbatch job.sh  
 ```
 ---
 
-## **Dataset**  
+## Dataset  
 - The dataset consists of **10,000 underwater images** with instance segmentation annotations.  
 - The dataset follows the **COCO format**, which we converted into **YOLO format** using `coco_to_yolo.py`.  
 
 ---
 
 
-##  **Model Training**  
-### **Train the SAM-based Model**  
+##  Model Training 
+### Train the SAM-based Model
 ```bash
 python tools/train.py project/our/configs/multiclass_usis_train.py
 ```
   
-### **Fine-Tune YOLOv8-Seg Model**  
+### Fine-Tune YOLOv8-Seg Model
 ```bash
 yolo segment train data=dataset.yaml model=yolov8-seg.pt epochs=50 imgsz=640
 ```
 
 ---
 
-## 🔍 **Inference & Testing**  
-### **Run Inference**  
+## Inference & Testing 
+### Run Inference
 ```bash
 python src/vis_infer.py
 python src/inference.py --model yolov8 --image test_image.jpg
 ```
 
-### **Compare Results Against Ground Truth**  
+### Compare Results Against Ground Truth
 ```bash
 python src/maks_visualisation.py 
 ```
-
-
 ---
+
+## Results & Visualization
+
+Here is a comparison of segmentation results between **USIS-SAM** and **YOLOv8-Seg**:
+
+**Up Right: Ground Truth | Down Right: USIS-SAM | Down Left: YOLOv8-Seg**
+### Example 1
+![Segmentation Comparison](Results/Screenshot%20from%202024-12-17%2010-12-50.png)
+
+### Example 2
+![Segmentation Comparison](Results/Screenshot%20from%202024-12-17%2010-13-53.png)
+
+### Example 3
+![Segmentation Comparison](Results/Screenshot%20from%202024-12-17%2010-15-46.png)
+
+
+
 
 ##  **References**  
 - **Original Research Paper:** [📄 Diving into Underwater](https://arxiv.org/abs/2406.06039)  
